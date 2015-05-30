@@ -4,13 +4,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
+	
+	ListView listTimeline;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		listTimeline = (ListView) findViewById(R.id.listTimeline);
 	}
 
 	@Override
