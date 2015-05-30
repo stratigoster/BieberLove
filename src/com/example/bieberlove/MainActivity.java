@@ -1,6 +1,7 @@
 package com.example.bieberlove;
 
 import android.support.v7.app.ActionBarActivity;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,8 @@ public class MainActivity extends ActionBarActivity {
 	ListView listTimeline;
 	DbHelper dbHelper;
 	SQLiteDatabase db;
+	Cursor cursor;
+	TimelineAdapter adapter; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,18 @@ public class MainActivity extends ActionBarActivity {
 		 // Connect to database
 	    dbHelper = new DbHelper(this);
 	    db = dbHelper.getReadableDatabase();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		  // Get the data from the database
+	    cursor = db.query(DbHelper.TABLE, null, null, null, null, null,
+	        DbHelper.C_CREATED_AT + " DESC");         
+
+	    // Create the adapter
+	    adapter = new TimelineAdapter(this, cursor); 
+	    listTimeline.setAdapter(adapter);  
 	}
 	
 	@Override

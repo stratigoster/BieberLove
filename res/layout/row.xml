@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vertical linear layout <1> -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/twitter_feed_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <!-- Horizontal linear layout <2> -->
+
+    <LinearLayout
+        android:id="@+id/image_frame"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- User <3> -->
+
+        <TextView
+            android:id="@+id/textUser"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Slashdot"
+            android:textStyle="bold" >
+        </TextView>
+        <!-- Timestamp <4> -->
+
+        <TextView
+            android:id="@+id/textText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Firefox comes to Android" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/textCreatedAt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="10 minutes ago" >
+        </TextView>
+    </LinearLayout>
+    <!-- Status <5> -->
+    <!--
+		<ImageView android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@+id/quickContactBadge1"></ImageView>
+    -->
+
+</LinearLayout>

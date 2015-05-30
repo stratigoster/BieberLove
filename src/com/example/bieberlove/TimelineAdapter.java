@@ -7,20 +7,16 @@ import android.widget.SimpleCursorAdapter;
 
 public class TimelineAdapter extends SimpleCursorAdapter{
 
-	public TimelineAdapter(Context context, int layout, Cursor c,
-			String[] from, int[] to) {
-		super(context, layout, c, from, to, 0);
-		
+	static final String[] from = { DbHelper.C_CREATED_AT, DbHelper.C_USER, DbHelper.C_TEXT,  DbHelper.C_PROFILE_IMAGE_URL }; 
+	static final int[] to = { R.id.textCreatedAt, R.id.textUser, R.id.textText, R.id.avatar};
+	  
+	public TimelineAdapter(Context context, Cursor c) { 
+		super(context,R.layout.row, c, from, to, 0);
 	}
 
 	//this is where you bind a cursor to a view
-	
 	@Override
 	public void bindView(View view, Context context, Cursor cursor) {
 		super.bindView(view, context, cursor);
 	}
-	
-	
-	
-
 }
