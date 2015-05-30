@@ -1,6 +1,7 @@
 package com.example.bieberlove;
 
 import android.support.v7.app.ActionBarActivity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,13 +10,25 @@ import android.widget.ListView;
 public class MainActivity extends ActionBarActivity {
 	
 	ListView listTimeline;
-
+	DbHelper dbHelper;
+	SQLiteDatabase db;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
 		listTimeline = (ListView) findViewById(R.id.listTimeline);
+		
+		 // Connect to database
+	    dbHelper = new DbHelper(this);
+	    db = dbHelper.getReadableDatabase();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		db.close();
 	}
 
 	@Override
