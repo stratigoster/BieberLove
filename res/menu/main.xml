@@ -4,9 +4,19 @@
     tools:context="com.example.bieberlove.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:id="@+id/itemTimeline"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Refresh">
+    </item>
+    <item
+        android:id="@+id/itemServiceStart"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="StartService">
+    </item>
+    <item
+        android:id="@+id/itemServiceStop"
+        android:icon="@android:drawable/ic_media_pause"
+        android:title="StopService">
+    </item>
 
 </menu>
